@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CompanyModelStoreContainer" CdmEntityContainer="CompanyEntities">
+    <EntitySetMapping Name="NewEmployees">
+      <EntityTypeMapping TypeName="CompanyModel.NewEmployee">
+        <MappingFragment StoreEntitySet="NewEmployee">
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="delete_emp" FunctionName="CompanyModel.Store.delete_emp" />
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="CompanyModel.Department">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="select_emp" FunctionName="CompanyModel.Store.select_emp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CompanyModel.select_emp_Result">
+          <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
