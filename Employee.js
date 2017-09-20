@@ -1,9 +1,9 @@
-﻿//Load Data in Table when documents is ready  
+﻿
 $(document).ready(function () {  
     loadData();  
 });  
   
-//Load Data function  
+
 function loadData() {  
     $.ajax({  
         url: "/Home/List",  
@@ -30,9 +30,7 @@ function loadData() {
         }  
     });  
 }  
-  
-//Add Data Function   
-function Add() {  
+  function Add() {  
     var res = validate();  
     if (res == false) {  
         return false;  
@@ -74,6 +72,21 @@ $.ajax({
 
     });
 
+//function Showalldepartment() {
+//    $.ajax({
+//            url: "/Home/Selectalldepartment",
+//            type: "GET",
+//            contentType: "application/json;charset=utf-8",
+//            dataType: "json"
+
+//        })
+//        .success(function (data) {
+//            var categoriesHtml = "";
+//            for (var i = 0; i < getData.length; i++) {
+//                $('#countrySelect').append($("<option ></option> ").val(getData[i].DepartmentID)
+//                    .html((getData[i].DepartmentName)));
+   
+//}
 
 
 
@@ -88,12 +101,6 @@ function DisplayCategories(response) {
         
     }
 
-
-
-
-
-
-//Function for getting the Data Based upon Employee ID  
 function getbyID(EmpID) {  
     $('#Name').css('border-color', 'lightgrey');  
     $('#Age').css('border-color', 'lightgrey');  
@@ -124,7 +131,7 @@ function getbyID(EmpID) {
     return false;  
 }  
   
-//function for updating employee's record  
+
 function Update() {  
     var res = validate();  
     if (res == false) {  
@@ -160,7 +167,7 @@ function Update() {
     });  
 }  
   
-//function for deleting employee's record  
+
 function Delele(id) {
     var ans = confirm("Are you sure you want to delete this Record?");  
     if (ans) {  
@@ -178,8 +185,6 @@ function Delele(id) {
         });  
     }  
 }  
-  
-//Function for clearing the textboxes  
 function clearTextBox() {  
     $('#Employee_id').val("");
     $('#Name').val("");  
@@ -193,8 +198,14 @@ function clearTextBox() {
     $('#age').css('border-color', 'lightgrey');  
     $('#state').css('border-color', 'lightgrey');  
     $('#country').css('border-color', 'lightgrey');  
-}  
-//Valdidation using jquery  
+}
+
+
+function DepartmentShow() {
+    $('#DepartmentID').val("");
+    $('#DepartmentName').val("");
+}
+
 function validate() {
     var isValid = true;
     if ($('#Name').val().trim() === "") {
